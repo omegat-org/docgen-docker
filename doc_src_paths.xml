@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-    <property name="fop.home.lib" value="/usr/share/java" />
-    <property name="fop.home.build" value="/usr/share/java" />
+    <property name="fop.home" value="/work/fop-1.1" />
     <property name="dbk" value="/usr/share/xml/docbook/stylesheet/docbook-xsl" />
     <property name="saxon" value="/usr/share/java/saxon.jar" />
 </project>

@@ -9,7 +9,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ant \
     ttf-dejavu \
     fonts-noto-cjk \
+    curl \
     && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /work
+
+RUN curl -L 'http://www.apache.org/dyn/closer.cgi?filename=/xmlgraphics/fop/binaries/fop-1.1-bin.tar.gz&action=download' | tar xz
 
 WORKDIR /work/root/doc_src
 
