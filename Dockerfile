@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libsaxon-java \
     ant \
     ttf-dejavu \
-    fonts-noto-cjk \
+    fonts-ipafont \
+    fonts-wqy-microhei \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /work/root/doc_src
