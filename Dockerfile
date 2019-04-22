@@ -18,4 +18,6 @@ COPY *.xml *.xsl /work/
 
 RUN ln -s /usr/share/xml/docbook/schema/dtd/4.5/ /work/docbook-xml-4.5
 
+USER nobody
+
 ENTRYPOINT ["ant"]
