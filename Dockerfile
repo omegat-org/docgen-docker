@@ -16,8 +16,11 @@ WORKDIR /work/root/doc_src
 
 COPY *.xml *.xsl /work/
 
+COPY docker-entrypoint /opt/bin/
+ENV PATH $PATH:/opt/bin
+
 RUN ln -s /usr/share/xml/docbook/schema/dtd/4.5/ /work/docbook-xml-4.5
 
 USER nobody
 
-ENTRYPOINT ["ant"]
+ENTRYPOINT ["docker-entrypoint", "ant"]
