@@ -10,7 +10,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ttf-dejavu \
     fonts-ipafont \
     fonts-wqy-microhei \
+    wget \
     && rm -rf /var/lib/apt/lists/*
+
+RUN wget https://www.xmlmind.com/ditac/_whc/whc-3_1_1.zip -O /tmp/whc.zip \
+    && unzip /tmp/whc.zip -d /opt \
+    && rm /tmp/whc.zip
 
 WORKDIR /work/root/doc_src
 
