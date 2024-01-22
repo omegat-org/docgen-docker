@@ -6,7 +6,7 @@ RUN mkdir -p /opt/saxon/lib \
     && adduser --disabled-password --gecos "" --home /work/ --shell /bin/bash omegat && mkdir -p /work/root/doc_src \
     && mkdir -p /work/.fop && chown omegat /work/.fop \
     && wget https://github.com/docbook/xslt10-stylesheets/releases/download/release%2F1.79.2/docbook-xsl-1.79.2.zip -O /tmp/docbook-xsl.zip \
-    && unzip /tmp/docbook-xsl.zip -d /opt \
+    && unzip /tmp/docbook-xsl.zip -d /opt && rm /tmp/docbook-xsl.zip \
     && wget https://www.xmlmind.com/ditac/_whc/whc-3_5_1.zip -O /tmp/whc.zip \
     && unzip /tmp/whc.zip -d /opt && rm /tmp/whc.zip && rm -rf /opt/whc-3_5_1/doc /opt/whc-3_5_1/src /opt/whc-3_5_1/docsrc \
     && wget https://downloads.apache.org/ant/binaries/apache-ant-1.10.14-bin.zip -O /tmp/ant.zip \
