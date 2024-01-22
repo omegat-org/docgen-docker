@@ -9,8 +9,8 @@ RUN mkdir -p /opt/saxon/lib \
     && unzip /tmp/ant.zip -d /opt && rm /tmp/ant.zip && rm -rf /opt/apache-ant-1.10.14/manual \
     && wget https://dlcdn.apache.org/xmlgraphics/fop/binaries/fop-2.9-bin.zip -O /tmp/fop.zip \
     && unzip /tmp/fop.zip -d /opt && rm /tmp/fop.zip && rm -rf /opt/fop-2.9/javadocs \
-    && mkdir -p /work/.fop && chown omegat /work/.fop \
     && adduser --disabled-password --gecos "" --home /work/ --shell /bin/bash omegat && mkdir -p /work/root/doc_src \
+    && mkdir -p /work/.fop && chown omegat /work/.fop \
     && ln -s /usr/share/xml/docbook/schema/dtd/4.5/ /work/docbook-xml-4.5
 
 COPY lib/saxon*.jar /opt/saxon/lib/
