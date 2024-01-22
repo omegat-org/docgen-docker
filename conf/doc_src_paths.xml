@@ -3,8 +3,7 @@
 <project>
     <property name="fop.home.lib" value="/opt/fop-2.9/fop/lib" />
     <property name="fop.home.build" value="/opt/fop-2.9/fop/build" />
-    <property name="dbk" value="/usr/share/xml/docbook/stylesheet/docbook-xsl" />
-    <property name="dbk.xsd" value="/work/docbook.xsd" />
-    <property name="saxon" value="/usr/share/java/saxon.jar" />
+    <property name="dbk" value="/opt/docbook-xsl-1.79.2" />
+    <property name="saxon" value="/opt/saxon/lib/saxon.jar" />
     <property name="whc" value="/opt/whc-3_5_1/lib/whc.jar" />
 </project>
