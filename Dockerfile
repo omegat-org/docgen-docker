@@ -24,7 +24,14 @@ COPY conf/*.xml conf/*.xsl /work/
 COPY lib/fop-hyph.jar /opt/fop-2.9/fop/build/
 
 ## fonts for pdf gen
-#RUN apk add font-noto font-noto-cjk
+RUN apk add ttf-dejavu fontconfig \
+    && mkdir -p /usr/share/fonts/noto/jp \
+    && wget -q https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKjp-hinted.zip -O /tmp/noto.zip \
+    && unzip /tmp/noto.zip -d /usr/share/fonts/noto/jp && rm /tmp/noto.zip  \
+    && mkdir -p /usr/share/fonts/noto/sc \
+    && wget -q https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJKsc-hinted.zip -O /tmp/noto.zip \
+    && unzip /tmp/noto.zip -d /usr/share/fonts/noto/sc && rm /tmp/noto.zip  \
+    && chmod -R o+r /usr/share/fonts/noto && fc-cache -f
 
 ## Runtime configuration
 USER omegat
