@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
-RUN apk add wget docbook-xml
+RUN apk add wget
 
 RUN mkdir -p /opt/saxon/lib \
     && adduser --disabled-password --gecos "" --home /work/ --shell /bin/bash omegat && mkdir -p /work/root/doc_src \
@@ -13,7 +13,10 @@ RUN mkdir -p /opt/saxon/lib \
     && unzip /tmp/ant.zip -d /opt && rm /tmp/ant.zip && rm -rf /opt/apache-ant-1.10.14/manual \
     && wget https://dlcdn.apache.org/xmlgraphics/fop/binaries/fop-2.9-bin.zip -O /tmp/fop.zip \
     && unzip /tmp/fop.zip -d /opt && rm /tmp/fop.zip && rm -rf /opt/fop-2.9/javadocs \
-    && ln -s /usr/share/xml/docbook/xml-dtd-4.1.2/ /work/docbook-xml-4.5
+    && mkdir /work/docbook-xml-4.5 && wget https://docbook.org/xml/4.5/docbook-xml-4.5.zip -O /tmp/docbook-xml-4.5.zip \
+    && unzip /tmp/docbook-xml-4.5.zip -d /work/docbook-xml-4.5 && rm /tmp/docbook-xml-4.5.zip \
+    && wget https://docbook.org/xml/5.0.1/docbook-5.0.1.zip -O /tmp/docbook-5.0.1.zip \
+    && unzip /tmp/docbook-5.0.1.zip -d /work && rm /tmp/docbook-5.0.1.zip && rm -rf /work/docbook-5.0.1/docs /work/docbook-5.0.1/tools
 
 COPY lib/saxon*.jar /opt/saxon/lib/
 COPY bin/docker-entrypoint /opt/bin/
