@@ -4,7 +4,7 @@
                  xmlns:saxon="http://icl.com/saxon"
                  extension-element-prefixes="saxon">
 
-<xsl:import href="file:///usr/share/xml/docbook/stylesheet/docbook-xsl/html/docbook.xsl"/>
+<xsl:import href="file:///opt/docbook-xsl-1.79.2/html/docbook.xsl"/>
 <xsl:output method="html"
             encoding="UTF-8"
             indent="yes"
