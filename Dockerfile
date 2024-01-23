@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11:alpine-jre
 
-RUN apk add wget
+RUN apk add wget libxml2-utils
 
 RUN mkdir -p /opt/saxon/lib \
     && adduser --disabled-password --gecos "" --home /work/ --shell /bin/bash omegat && mkdir -p /work/root/doc_src \

@@ -4,8 +4,6 @@
     <property name="fop.home.lib" value="/opt/fop-2.9/fop/lib" />
     <property name="fop.home.build" value="/opt/fop-2.9/fop/build" />
     <property name="dbk" value="/opt/docbook-xsl-1.79.2" />
-    <property name="dbk.dtd" value="/work/docbook-xml-4.5" />
-    <property name="dbk5.dtd" value="/work/docbook-5.0.1/dtd" />
     <property name="saxon" value="/opt/saxon/lib/saxon.jar" />
     <property name="whc" value="/opt/whc-3_5_1/lib/whc.jar" />
 </project>
