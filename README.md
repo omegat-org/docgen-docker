@@ -1,20 +1,35 @@
 # docgen-docker
-This project defines a Docker container for generating
-[OmegaT](https://omegat.org) docs.
+This project defines an OCI standard container for generating
+[OmegaT](https://omegat.org) documents.
 
 ## Requirements
+
+To generate container images, you need to prepare container runtime,
+and OCI standard CLI.
+
+You have several options;
+
+### integrated desktop application: Docker Desktop or Rancher Desktop
+
 - [Docker](https://www.docker.com/products/docker-desktop)
+- [Rancher Desktop](https://rancherdesktop.io/)
+
+### Linux native OCI runtime and CLI tool
+
+- [Containerd](https://containerd.io/)
+- [nerdctl](https://github.com/containerd/nerdctl)
 
 ## Usage
+
 Invoke from the OmegaT `doc_src` dir as so:
 
 ```sh
 docker run -i --rm -v $(dirname $PWD):/work/root omegatorg/docgen -Dlanguage=en html
 ```
 
-The arguments after `omegatorg/docgen` are those supplied to `ant` according to
-the [docs
-readme](https://sourceforge.net/p/omegat/svn/HEAD/tree/trunk/doc_src/Readme.txt).
+The arguments after `omegatorg/docgen` are those supplied to `ant` according
+to the developer manual's section [Manual build using container](https://omegat.readthedocs.io/en/latest/07.ManualBuildUsingContainer/)
+and [building the documentation manually](https://omegat.readthedocs.io/en/latest/08.ManuallyBuildDocumentation/).
 
 You may want to create a wrapper script like the following, named
 e.g. `docgen`:
