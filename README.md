@@ -55,3 +55,10 @@ it should be built as [multi-platform container image](https://docs.docker.com/b
 
 - Containerd or Docker Engine with QEMU installed
 - The container image store enabled
+
+### Build with nerdctl
+
+```shell
+echo PassWord | env CLI_CMD=nerdctl USER=myname make login
+env CLI_CMD=nerdctl make build
+```
