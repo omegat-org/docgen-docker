@@ -53,6 +53,7 @@ it should be built as [multi-platform container image](https://docs.docker.com/b
 
 ### Prerequisites:
 
+- Git LFS to checkout jar files under lib/
 - Containerd or Docker Engine with QEMU installed
 - The container image store enabled
 
