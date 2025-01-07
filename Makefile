@@ -5,10 +5,10 @@ USER ?= omegatorg
 build: build_alpine build_genpdf
 
 build_alpine:
-	${CLI_CMD} build --tag omegatorg/docgen:alpine .
+	${CLI_CMD} build --tag omegatorg/docgen:alpine --platform linux/amd64,linux/arm64 .
 
 build_genpdf:
-	${CLI_CMD} build --tag omegatorg/docgen:pdfgen . --build-arg pdfgen=1
+	${CLI_CMD} build --tag omegatorg/docgen:pdfgen --platform linux/amd64,linux/arm64 . --build-arg pdfgen=1
 
 push:
 	${CLI_CMD} push omegatorg/docgen:alpine

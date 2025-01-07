@@ -1,11 +1,11 @@
 # docgen-docker
-This project defines an OCI standard container for generating
-[OmegaT](https://omegat.org) documents.
 
-## Requirements
+This project defines an OCI standard container for generating [OmegaT](https://omegat.org) documents.
 
-To generate container images, you need to prepare container runtime,
-and OCI standard CLI.
+## Requirements to run
+
+To generate container images, you need to prepare container runtime, and OCI standard CLI.
+It supports aarch64/ARM64 and x86_64/AMD64 platform architectures.
 
 You have several options;
 
@@ -23,7 +23,7 @@ You have several options;
 
 Invoke from the OmegaT `doc_src` dir as so:
 
-```sh
+```shell
 docker run -i --rm -v $(dirname $PWD):/work/root omegatorg/docgen -Dlanguage=en html
 ```
 
@@ -34,7 +34,7 @@ and [building the documentation manually](https://omegat.readthedocs.io/en/lates
 You may want to create a wrapper script like the following, named
 e.g. `docgen`:
 
-```sh
+```shell
 #!/bin/sh
 
 exec docker run -i --rm -v $(dirname $PWD):/work/root omegatorg/docgen "$@"
@@ -42,6 +42,16 @@ exec docker run -i --rm -v $(dirname $PWD):/work/root omegatorg/docgen "$@"
 
 ...which you can invoke like so:
 
-```sh
+```shell
 docgen -Dlanguage=en html
 ```
+
+## Build
+
+To support multiple platform architecture like Aarch64/ARM64 and Amd64 such as M1 mac and Windows 11 for ARM,
+it should be built as [multi-platform container image](https://docs.docker.com/build/building/multi-platform/).
+
+### Prerequisites:
+
+- Containerd or Docker Engine with QEMU installed
+- The container image store enabled

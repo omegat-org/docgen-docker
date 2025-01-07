@@ -1,5 +1,6 @@
 FROM eclipse-temurin:21-jre-alpine
 ARG pdfgen=0
+RUN uname -m > /arch
 
 RUN apk add wget libxml2-utils
 
